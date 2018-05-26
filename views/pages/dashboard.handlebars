@@ -1,0 +1,40 @@
+
+<div class="row">
+    <div class="col  m3"></div>
+    <div class=" col s12 m6">
+    <ul class="collection with-header ">
+        <li class="collection-header">
+          <h5>Slams</h5>
+        </li>
+        {{#each slams}}
+        <li class="collection-item ">
+            <form action="/slam/delete/{{this._id}}?_method=DELETE" class="secondary-content" method="POST">
+            <button class="btn-flat blue-text" type="submit"><i class="fa fa-minus-circle"></i></button>
+            </form>
+            <a href="/slam/view/{{this._id}}"><h5>{{this.name}}</h5></a>
+            <p>{{this.email}}</p>
+            
+        </li>
+        {{/each}}
+    </ul>
+    {{status}}
+    <script
+    src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="/js/main.js"></script>
+    {{#if status}}
+    <script>
+    $(document).ready(()=>{
+       Materialize.toast('slam'+' {{status}}', 4000)
+        console.log('ok')
+    })
+    
+    </script>
+    {{/if}}
+    </div>
+     <div class="col  m3"></div>
+</div>
+
+
+
+

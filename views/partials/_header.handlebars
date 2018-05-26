@@ -1,0 +1,120 @@
+<div class="navbar">
+<nav class="grey darken-3 z-depth-0">
+  
+    <div class="nav-wrapper z-depth-0">
+     <a href="/" class="brand-logo">SlamPad</a>
+     {{#if user}}
+     <a href="#" class="button-collapse  " data-activates="side-nav"><i class="fa fa-bars"></i></a>
+     {{/if}}
+     <!-- right-nav -->
+     <ul class="right hide-on-med-and-down">
+       {{#if user}}
+       <li><a href="/dashboard">
+       <div class="chip">
+         <img src="{{user.image}}" alt="">
+         {{user.firstName}}
+       </div>
+       </a></li>
+       
+       <li><a href="/auth/logout" class="tooltipped" data-position="bottom", data-tooltip="logout"><i class="fa fa-sign-out fa-fw"></i>logout</a></li>
+      <li>
+        <a href="/users" class="tooltipped" data-position="bottom" , data-tooltip="findUsers"><i class="fa fa-user-plus fa-fw"></i>findfriends</a>
+      </li>
+       <li><a href="/users/frnds" class="tooltipped" data-position="bottom", data-tooltip="friends"><i class="fa fa-users fa-fw"></i>friends</a></li>
+        <li>
+          <a href="/dashboard" class="tooltipped" data-position="bottom" , data-tooltip="slams">
+            <i class="fa fa-book fa-fw"></i>slams</a>
+        </li>
+        <li><a href="/users/requests" class="tooltipped" data-position="bottom", data-tooltip="requests"><span class="badge white-text fa fa-bell">{{reqCount}}Notification</span></a></li>
+       {{else}}
+       <li><a href="/login">Login</a></li>
+       <li><a href="/login">Create Account</a></li>
+       {{/if}}
+     </ul>
+
+     <!-- side-menu -->  
+     {{!-- <ul class="side-nav white-text grey darken-3 " id="main-menu">
+       <div class="container " style="margin-top:1em">
+        {{#if user}}
+         <li class="container center-align">
+      
+          <img src="{{user.image}}" alt="" class="responsive-img circle" height="80" width="80">
+          <p>{{user.firstName}}</p>
+     
+          
+         </li>
+         <li><a href="/dashboard" class="white-text"><i class="fa fa-book" style="color:white"></i>Slams</a></li>
+         <li><a href="/auth/logout" class="white-text"><i class="fa fa-sign-out" style="color:white"></i>Logout</a></li>
+        <li>
+          <a href="/users" class="white-text" ><i class="fa fa-user-plus " style="color:white"></i>findfriends</a>
+        </li>
+        <li>
+          <a href="/users/frnds" class="white-text">
+        <i class="fa fa-users fa-fw" style="color:white"></i>friends</a>
+        </li>
+          <li>
+            <a href="/users/requests" class="white-text">
+            <i class="fa fa-bell" style="color:white"></i>{{reqCount}}Notification</a>
+          </li>
+        <div class="divider"></div>
+        <li class="row">
+          <a href="" class="col s2"></i></a>
+          <div class="col s4"><i class="fa fa-google" style="color:red"></i></div>
+          <div class="col s4 left-align">
+            <i class="fa fa-facebook" style="color:blue"></i>
+          </div>
+          <div class="col s2"></i></div>
+        </li>
+         {{else}}
+
+         <li><a href="/login" class="white-text"><i class="fa fa-sign-in-alt" style="color:white"></i>Login</a></li>
+         <li><a href="/about" class="white-text"><i class="fa fa-info fa-fw" style="color:white"></i>About</a></li>
+         {{/if}}
+       </div>
+     </ul> --}}
+     {{!-- side-nav --}}
+     <ul class="side-nav grey darken-2" id="side-nav">
+       {{#if user}}
+       <li>
+         <div class="user-view">
+           <div class="background grey darken-3">
+           
+           </div>
+           <a href="#">
+             <img src={{user.image}} alt="" class="circle">
+           </a>
+           <a href="#">
+             <span class="name white-text">{{user.firstName}}</span>
+           </a>
+           <a href="#">
+             <span class="email white-text">{{user.email}}</span>
+           </a>
+         </div>
+       </li>
+       <li>
+         <li>
+           <a href="/dashboard" class="white-text"><i class="fa fa-book fa-fw" style="color:white"></i>Slams</a>
+           <a href="/users/frnds" class="white-text"><i class="fa fa-users fa-fw" style="color:white"></i>Friends</a>
+           <a href="/users" class="white-text"><i class="fa fa-user-plus fa-fw" style="color:white"></i>FindFriends</a>
+           <a href="/users/requests" class="white-text"><i class="fa fa-bell fa-fw" style="color:white"></i>Notifications</a>
+          <a href="/about" class="white-text">
+          <i class="fa fa-info fa-fw" style="color:white"></i>About</a>
+           <a href="/auth/logout" class="white-text"><i class="fa fa-sign-out fa-fw" style="color:white"></i>Logout</a>
+         </li>
+       </li>
+       <li>
+         <div class="divider"></div>
+       </li>
+       <li>
+         <a class="subheader"> Follow Us on</a>
+       </li>
+       <li>
+         <a href="" class="white-text"><i class="fa fa-facebook fa-fw" style="color:white"></i>Facebook</a>
+       </li>
+       {{else}}
+       <li><a href="login"><i class="fa fs-sing-in"></i>Login</a></li>
+     </ul>
+    </div>
+ {{/if}}
+</nav>
+</div>

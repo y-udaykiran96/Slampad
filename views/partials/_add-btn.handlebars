@@ -1,0 +1,19 @@
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red pulse">
+      <i class="fa fa-edit"></i>
+    </a>
+    <ul>
+      {{!-- <li><a class="btn-floating blue darken-3"><i class="fa fa-envelope"></i></a></li> --}}
+      <li><a class="btn-floating blue darken-3  modal-trigger" href="#modal1"><i class="fa fa-link"></i></a></li>
+      <li><a class="btn-floating green darken-3" href="whatsapp://send?text=https://slampad-share.herokuapp.com/slam/{{user.googleID}}"><i class="fa fa-whatsapp"></i></a></li>
+    </ul>
+  </div>
+    <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>link</h4>
+      <input type="text" value="https://slampad-share.herokuapp.com/slam/{{user.googleID}}">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+  </div>
